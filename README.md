@@ -17,7 +17,7 @@
 Use a [nossa comunidade](https://coodesh.com/desenvolvedores#community) para tirar dúvidas sobre o processo ou envie um e-mail para contato@coodesh.com.
 ### Screenshots 
 
-<img src="assets/crud1.png" height="500em" /> 
+<img src="assets/listProd1.png" height="500em" /> 
 <img src="assets/crud2.png" height="500em" />
 
 <h2>Detalhes de Configuracao</h2>
@@ -26,7 +26,9 @@ Use a [nossa comunidade](https://coodesh.com/desenvolvedores#community) para tir
   * Flutter: versao 2.2.3
   * Dart: versao 2.2.0
   * Design Pattern: MVVM
-  * Dependencias Utilizadas:  cloud_firestore
+  * Dependencias Utilizadas:  
+    - cloud_firestore
+    - flutter_rating_bar
   
 ## Candidato/Desenvolvedor
 

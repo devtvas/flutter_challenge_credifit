@@ -1,4 +1,5 @@
 import 'package:crud2/models/product_model.dart';
+import 'package:crud2/views/product/widgets/product_appbar.dart';
 import 'package:crud2/views/product/widgets/product_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -14,6 +15,7 @@ class _ProductViewState extends State<ProductView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // appBar: buildAppBar(),
       body: StreamBuilder<QuerySnapshot>(
         stream: FirebaseFirestore.instance.collection('products').snapshots(),
         builder: (context, snapshot) {
@@ -35,4 +37,12 @@ class _ProductViewState extends State<ProductView> {
       ),
     );
   }
+
+  PreferredSize buildAppBar() => PreferredSize(
+        preferredSize: Size.fromHeight(45.3),
+        child: AppBar(
+          elevation: 0,
+          backgroundColor: Colors.red,
+        ),
+      );
 }

@@ -17,8 +17,8 @@
 Use a [nossa comunidade](https://coodesh.com/desenvolvedores#community) para tirar dúvidas sobre o processo ou envie um e-mail para contato@coodesh.com.
 ### Screenshots 
 
-<img src="assets/listProd1.png" height="500em" /> 
-<img src="assets/crud2.png" height="500em" />
+<img src="assets/versao1.png" height="500em" /> 
+<img src="assets/versao2.png" height="500em" />
 
 <h2>Detalhes de Configuracao</h2>
   
@@ -29,7 +29,16 @@ Use a [nossa comunidade](https://coodesh.com/desenvolvedores#community) para tir
   * Dependencias Utilizadas:  
     - cloud_firestore
     - flutter_rating_bar
-  
+
+<h2>Como rodar o projeto</h2>
+
+  - [Build_Mobile]
+    ```
+    $ clone o projeto
+    $ cd nome-projeto
+    $ flutter build run
+
+    ```
 ## Candidato/Desenvolvedor
 
 Seguem meu perfil do Linkedin, [@devtvas](https://www.linkedin.com/in/devtvas/).

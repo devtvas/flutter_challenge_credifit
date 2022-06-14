@@ -1,24 +1,30 @@
 import 'package:crud2/models/product_model.dart';
+import 'package:crud2/util/alert_dialogs.dart';
+import 'package:crud2/util/validators.dart';
+import 'package:crud2/views/details/details_view.dart';
+import 'package:crud2/views/edit/edit_view.dart';
 import 'package:flutter/material.dart';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:intl/intl.dart';
-import 'package:brasil_fields/brasil_fields.dart';
+
 import 'package:flutter/services.dart';
 
-class ProductTile extends StatelessWidget {
+class ProductItem extends StatelessWidget {
   DocumentSnapshot prod;
 
-  ProductTile(this.prod);
+  ProductItem(this.prod);
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        // Navigator.of(context)
-        //     .push(MaterialPageRoute(builder: (context) => ProductScreen(ad)));
-        print('object');
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => EditView(prod: prod),
+            // builder: (context) => DetailsView(prod: prod),
+          ),
+        );
       },
       child: Container(
         height: 135.0,
@@ -44,11 +50,8 @@ class ProductTile extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
-                      buildTop(),
-                      // SizedBox(
-                      //   height: 20,
-                      // ),
-                      buildDown(),
+                      buildTop(context),
+                      buildDown(context),
                     ],
                   ),
                 ),
@@ -60,10 +63,11 @@ class ProductTile extends StatelessWidget {
     );
   }
 
-  Widget buildTop() {
+  Widget buildTop(BuildContext context) {
     return Row(
       children: [
         Expanded(
+          flex: 4,
           child: Text(
             prod['title'],
             style: const TextStyle(
@@ -73,21 +77,33 @@ class ProductTile extends StatelessWidget {
           ),
         ),
         IconButton(
-          onPressed: () {},
+          onPressed: () {
+            AlertDialogTemplate().showDialogProductItem(context);
+          },
           icon: Icon(Icons.more_horiz),
         )
+        // Expanded(
+        //   flex: 1,
+        //   child: Text(
+        //     prod['type'],
+        //     style: const TextStyle(
+        //         fontSize: 16.0,
+        //         fontWeight: FontWeight.w400,
+        //         overflow: TextOverflow.ellipsis),
+        //   ),
+        // ),
       ],
     );
   }
 
-  Widget buildDown() {
+  Widget buildDown(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         RatingBarIndicator(
-          rating: convertIntRatingDouble(prod['rating']),
+          rating: Validators.convertIntRatingDouble(prod['rating']),
           itemBuilder: (context, index) => const Icon(
-            Icons.star,
+            Icons.star_rate_rounded,
             color: Colors.indigo,
           ),
           itemCount: 5,
@@ -96,26 +112,10 @@ class ProductTile extends StatelessWidget {
         ),
         Text(
           // 'R\$ ${prod['price']}',
-          'R\$ ${formatCasaDecimal(prod['price'])}',
-          style: TextStyle(fontSize: 12.0, fontWeight: FontWeight.w700),
+          'R\$ ${Validators.formatCasaDecimal(prod['price'])}',
+          style: const TextStyle(fontSize: 12.0, fontWeight: FontWeight.w700),
         ),
       ],
     );
-  }
-
-  //*Todo camada de negocio
-  convertIntRatingDouble(dynamic rating) {
-    //converter rating int x double
-    final int x = rating;
-    final double ratingConvertido = x.toDouble();
-    return ratingConvertido;
-  }
-
-  formatCasaDecimal(dynamic price) {
-    //formatar as casas decimais Ex.: De(28.1) Para(28,10)
-    var formatter = new NumberFormat("###,###.00#", "pt_BR");
-    dynamic priceModified = formatter.format(price);
-    print(priceModified);
-    return priceModified;
   }
 }

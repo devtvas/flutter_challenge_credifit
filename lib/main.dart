@@ -1,4 +1,4 @@
-import 'package:crud2/views/product/products_view.dart';
+import 'package:crud2/views/home/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -6,7 +6,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(App());
+  runApp(const App());
 }
 
 class App extends StatelessWidget {
@@ -21,7 +21,7 @@ class App extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const ProductView(),
+      home: const HomeView(),
     );
   }
 }

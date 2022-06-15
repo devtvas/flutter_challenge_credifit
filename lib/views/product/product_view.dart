@@ -10,6 +10,7 @@ class ProductView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var collection = FirebaseFirestore.instance.collection('products');
     return Container(
       key: key,
       constraints: BoxConstraints.tightForFinite(height: MQuery.height! * 1.2),
@@ -18,8 +19,7 @@ class ProductView extends StatelessWidget {
         fit: StackFit.passthrough,
         children: <Widget>[
           StreamBuilder<QuerySnapshot>(
-            stream:
-                FirebaseFirestore.instance.collection('products').snapshots(),
+            stream: collection.snapshots(),
             builder: (context, snapshot) {
               if (snapshot.hasError) {
                 return Text("Something ${snapshot.error}");

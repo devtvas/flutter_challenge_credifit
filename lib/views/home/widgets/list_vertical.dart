@@ -1,3 +1,4 @@
+import 'package:crud2/util/custom_color.dart';
 import 'package:crud2/util/media_query.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
@@ -27,28 +28,28 @@ class ListVertical extends StatelessWidget {
                 return Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Container(
-                    padding: const EdgeInsets.fromLTRB(15.0, 15.0, 0.0, 15.0),
+                    // padding: const EdgeInsets.fromLTRB(15.0, 15.0, 0.0, 15.0),
                     width: 150.0,
                     height: 50,
                     alignment: Alignment.centerLeft,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(25.0),
-                      color: const Color(0xFF031956),
+                      borderRadius: BorderRadius.circular(15.0),
+                      color: CustomColor.credifit,
                       boxShadow: [
                         BoxShadow(
                           color: Colors.black87.withOpacity(0.2),
                           spreadRadius: 2,
                           blurRadius: 1,
                           offset:
-                              const Offset(0, 2), // changes position of shadow
+                              const Offset(0, 4), // changes position of shadow
                         ),
                       ],
                     ),
                     child: Center(
                       child: Text(
                         types[index],
-                        style: const TextStyle(
-                            color: Color(0xFF8BA7EE),
+                        style: TextStyle(
+                            color: CustomColor.tTitleWhite,
                             fontSize: 14.0,
                             fontWeight: FontWeight.w600),
                       ),

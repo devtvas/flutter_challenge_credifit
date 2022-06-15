@@ -1,5 +1,3 @@
-import 'package:crud2/components/category_title.dart';
-import 'package:crud2/components/filter_type.dart';
 import 'package:crud2/models/product_model.dart';
 import 'package:crud2/util/custom_color.dart';
 import 'package:crud2/util/media_query.dart';

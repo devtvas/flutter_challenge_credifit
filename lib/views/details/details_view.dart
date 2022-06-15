@@ -1,7 +1,6 @@
 import 'package:crud2/util/custom_color.dart';
 import 'package:crud2/views/details/widgets/body.dart';
 import 'package:crud2/views/details/widgets/header.dart';
-import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';

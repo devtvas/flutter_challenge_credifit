@@ -1,5 +1,6 @@
 import 'package:crud2/models/product_model.dart';
 import 'package:crud2/util/alert_dialogs.dart';
+import 'package:crud2/util/custom_color.dart';
 import 'package:crud2/util/validators.dart';
 import 'package:crud2/views/details/details_view.dart';
 import 'package:crud2/views/edit/edit_view.dart';
@@ -10,10 +11,18 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 import 'package:flutter/services.dart';
 
-class ProductItem extends StatelessWidget {
+//https://betterprogramming.pub/popup-menu-customization-in-flutter-aa8827f6ce39
+class ProductItem extends StatefulWidget {
   DocumentSnapshot prod;
 
   ProductItem(this.prod);
+
+  @override
+  State<ProductItem> createState() => _ProductItemState();
+}
+
+class _ProductItemState extends State<ProductItem> {
+  var _popupMenuItemIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -21,8 +30,8 @@ class ProductItem extends StatelessWidget {
       onTap: () {
         Navigator.of(context).push(
           MaterialPageRoute(
-            builder: (context) => EditView(prod: prod),
-            // builder: (context) => DetailsView(prod: prod),
+            // builder: (context) => EditView(prod: prod),
+            builder: (context) => DetailsView(prod: widget.prod),
           ),
         );
       },
@@ -41,7 +50,7 @@ class ProductItem extends StatelessWidget {
                 //   'https://www.woolha.com/media/2020/03/eevee.png',
                 //   fit: BoxFit.cover,
                 // ),
-                child: Center(child: Text(prod['filename'])),
+                child: Center(child: Text(widget.prod['filename'])),
               ),
               Expanded(
                 child: Padding(
@@ -69,31 +78,69 @@ class ProductItem extends StatelessWidget {
         Expanded(
           flex: 4,
           child: Text(
-            prod['title'],
+            widget.prod['title'],
             style: const TextStyle(
                 fontSize: 16.0,
                 fontWeight: FontWeight.w400,
                 overflow: TextOverflow.ellipsis),
           ),
         ),
-        IconButton(
-          onPressed: () {
-            AlertDialogTemplate().showDialogProductItem(context);
+        PopupMenuButton(
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(
+              Radius.circular(20.0),
+            ),
+          ),
+          child: Container(
+            child: const Icon(
+              Icons.more_horiz,
+              size: 30,
+            ),
+            decoration: BoxDecoration(
+                color: CustomColor.kSecondaryColor, shape: BoxShape.circle),
+          ),
+          itemBuilder: (ctx) => [
+            _buildPopupMenuItem('Edit', Icons.edit, 0),
+            _buildPopupMenuItem('Delete', Icons.delete, 1),
+          ],
+          onSelected: (value) {
+            _onMenuItemSelected(value as int);
           },
-          icon: Icon(Icons.more_horiz),
         )
-        // Expanded(
-        //   flex: 1,
-        //   child: Text(
-        //     prod['type'],
-        //     style: const TextStyle(
-        //         fontSize: 16.0,
-        //         fontWeight: FontWeight.w400,
-        //         overflow: TextOverflow.ellipsis),
-        //   ),
-        // ),
       ],
     );
+  }
+
+  PopupMenuItem _buildPopupMenuItem(
+      String title, IconData iconData, int value) {
+    return PopupMenuItem(
+      value: value,
+      child: Row(
+        children: [
+          Icon(
+            iconData,
+            color: Colors.black,
+          ),
+          Text(title),
+        ],
+      ),
+    );
+  }
+
+  _onMenuItemSelected(int value) {
+    setState(() {
+      _popupMenuItemIndex = value;
+    });
+
+    if (value == 0) {
+      Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) => EditView(prod: widget.prod),
+        ),
+      );
+    } else {
+      AlertDialogTemplate().showDialogRemoveItem(context, widget.prod.id);
+    }
   }
 
   Widget buildDown(BuildContext context) {
@@ -101,7 +148,7 @@ class ProductItem extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         RatingBarIndicator(
-          rating: Validators.convertIntRatingDouble(prod['rating']),
+          rating: Validators.convertIntRatingDouble(widget.prod['rating']),
           itemBuilder: (context, index) => const Icon(
             Icons.star_rate_rounded,
             color: Colors.indigo,
@@ -112,7 +159,7 @@ class ProductItem extends StatelessWidget {
         ),
         Text(
           // 'R\$ ${prod['price']}',
-          'R\$ ${Validators.formatCasaDecimal(prod['price'])}',
+          'R\$ ${Validators.formatCasaDecimal(widget.prod['price'])}',
           style: const TextStyle(fontSize: 12.0, fontWeight: FontWeight.w700),
         ),
       ],

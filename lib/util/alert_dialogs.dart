@@ -1,3 +1,4 @@
+import 'package:crud2/util/services/product_service.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
@@ -11,7 +12,20 @@ class AlertDialogTemplate extends State<StatefulWidget>
     return SizedBox.shrink();
   }
 
-  showDialogProductItem(BuildContext context) {
+  static showDialogSnack(BuildContext context, String title) {
+    return ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(title),
+        duration: const Duration(seconds: 1),
+        action: SnackBarAction(
+          label: 'OK',
+          onPressed: () {},
+        ),
+      ),
+    );
+  }
+
+  showDialogRemoveItem(BuildContext context, String id) {
     AlertDialog dialogue = AlertDialog(
       titlePadding: const EdgeInsets.all(0),
       title: Container(
@@ -54,9 +68,13 @@ class AlertDialogTemplate extends State<StatefulWidget>
                 children: [
                   Center(
                       child: ElevatedButton(
-                          onPressed: () {
+                          onPressed: () async {
+                            //
+                            await ProductService().removeProduct(id);
+                            //
                             Navigator.of(context, rootNavigator: true)
                                 .pop('dialog');
+
                             ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                               content: const Text('Excluído com sucesso'),
                               duration: const Duration(seconds: 1),

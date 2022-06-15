@@ -1,6 +1,6 @@
 <h1>Resolucao do desafio técnico para o processo seletivo da empresa Credifit by (Coodesh).</h1>
 
-## Branchs do projeto (branchs)
+## Historia do projeto (branchs)
 
 - [MAIN](https://github.com/devtvas/flutter_challenge_credifit/tree/main) - voce esta aqui!
 - [CRED-02](https://github.com/devtvas/flutter_challenge_credifit/tree/CRED-02) - 12/06/22

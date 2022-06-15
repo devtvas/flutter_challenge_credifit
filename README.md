@@ -1,5 +1,11 @@
 <h1>Resolucao do desafio técnico para o processo seletivo da empresa Credifit by (Coodesh).</h1>
 
+## Branchs do projeto (branchs)
+
+- [MAIN](https://github.com/devtvas/flutter_challenge_credifit/tree/main) - voce esta aqui!
+- [CRED-02](https://github.com/devtvas/flutter_challenge_credifit/tree/CRED-02) - 12/06/22
+- [CRED-03](https://github.com/devtvas/flutter_challenge_credifit/tree/CRED-03) - 13/06/22
+- [CRED-04](https://github.com/devtvas/flutter_challenge_credifit/tree/CRED-04) - 15/06/22
 
 <h2>Como rodar o projeto</h2>
 
@@ -24,15 +30,6 @@
  
 * Utilizar o Firestore ou Firebase Realtime DB
 
-## Suporte
-
-Use a [nossa comunidade](https://coodesh.com/desenvolvedores#community) para tirar dúvidas sobre o processo ou envie um e-mail para contato@coodesh.com.
-
-### Screenshots 
-
-<img src="assets/versao1.png" height="500em" /> 
-<img src="assets/versao2.png" height="500em" />
-
 <h2>Detalhes de Configuracao</h2>
   
   + Flutter channel: stable 
@@ -50,16 +47,10 @@ Use a [nossa comunidade](https://coodesh.com/desenvolvedores#community) para tir
     - mask: 
     - app_popup_menu: 
 
-<h2>Como rodar o projeto</h2>
 
-  + [Build_Mobile]
+## Suporte
 
-    ```
-    $ clone o projeto
-    $ cd nome-projeto
-    $ flutter build run
-
-    ```
+Use a [nossa comunidade](https://coodesh.com/desenvolvedores#community) para tirar dúvidas sobre o processo ou envie um e-mail para contato@coodesh.com.
 
 ## Candidato/Desenvolvedor
 

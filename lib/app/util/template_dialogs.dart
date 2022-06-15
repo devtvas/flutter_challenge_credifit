@@ -1,9 +1,9 @@
-import 'package:crud2/util/services/product_service.dart';
+import 'package:crud2/app/services/product_service.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 
-class AlertDialogTemplate extends State<StatefulWidget>
+class TemplateDialog extends State<StatefulWidget>
     with TickerProviderStateMixin {
   final _formKey = GlobalKey<FormState>();
   @override

@@ -1,10 +1,9 @@
-import 'package:crud2/models/product_model.dart';
-import 'package:crud2/util/custom_color.dart';
-import 'package:crud2/util/media_query.dart';
-import 'package:crud2/views/home/widgets/app_bar.dart';
-import 'package:crud2/views/product/widgets/product_item.dart';
-import 'package:crud2/views/home/widgets/list_vertical.dart';
-import 'package:crud2/views/product/product_view.dart';
+import 'package:crud2/app/models/product_model.dart';
+import 'package:crud2/app/util/custom_color.dart';
+import 'package:crud2/app/util/media_query.dart';
+import 'package:crud2/app/views/home/components/app_bar.dart';
+import 'package:crud2/app/views/home/components/list_vertical.dart';
+import 'package:crud2/app/views/product/product_view.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';

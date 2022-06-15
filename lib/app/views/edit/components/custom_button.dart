@@ -1,11 +1,10 @@
-import 'package:crud2/util/alert_dialogs.dart';
-import 'package:crud2/util/custom_color.dart';
+import 'package:crud2/app/util/custom_color.dart';
 import 'package:flutter/material.dart';
 
-class DevtvasButton extends StatelessWidget {
+class CustomButton extends StatelessWidget {
   final String? title;
   final VoidCallback? onTap;
-  const DevtvasButton({
+  const CustomButton({
     Key? key,
     this.title,
     this.onTap,

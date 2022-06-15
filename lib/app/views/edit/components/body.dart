@@ -1,8 +1,8 @@
-import 'package:crud2/util/components/devtvas_button.dart';
-import 'package:crud2/util/custom_color.dart';
-import 'package:crud2/util/media_query.dart';
-import 'package:crud2/util/services/product_service.dart';
-import 'package:crud2/util/validators.dart';
+import 'package:crud2/app/views/edit/components/custom_button.dart';
+import 'package:crud2/app/util/custom_color.dart';
+import 'package:crud2/app/util/media_query.dart';
+import 'package:crud2/app/services/product_service.dart';
+import 'package:crud2/app/util/validators.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -171,7 +171,7 @@ class _BodyState extends State<Body> {
           const SizedBox(height: 15),
           Divider(color: CustomColor.kBorderColor),
           const SizedBox(height: 30),
-          DevtvasButton(
+          CustomButton(
             title: 'Atualizar',
             onTap: () => _onUpdateProd(),
           ),

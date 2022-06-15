@@ -1,9 +1,9 @@
-import 'package:crud2/models/product_model.dart';
-import 'package:crud2/util/alert_dialogs.dart';
-import 'package:crud2/util/custom_color.dart';
-import 'package:crud2/util/validators.dart';
-import 'package:crud2/views/details/details_view.dart';
-import 'package:crud2/views/edit/edit_view.dart';
+import 'package:crud2/app/models/product_model.dart';
+import 'package:crud2/app/util/template_dialogs.dart';
+import 'package:crud2/app/util/custom_color.dart';
+import 'package:crud2/app/util/validators.dart';
+import 'package:crud2/app/views/details/details_view.dart';
+import 'package:crud2/app/views/edit/edit_view.dart';
 import 'package:flutter/material.dart';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -139,7 +139,7 @@ class _ProductItemState extends State<ProductItem> {
         ),
       );
     } else {
-      AlertDialogTemplate().showDialogRemoveItem(context, widget.prod.id);
+      TemplateDialog().showDialogRemoveItem(context, widget.prod.id);
     }
   }
 

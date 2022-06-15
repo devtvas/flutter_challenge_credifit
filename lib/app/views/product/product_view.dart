@@ -1,18 +1,21 @@
-import 'package:crud2/models/product_model.dart';
-import 'package:crud2/util/media_query.dart';
-import 'package:crud2/views/product/widgets/product_item.dart';
+import 'package:crud2/app/util/media_query.dart';
+import 'package:crud2/app/views/product/components/product_item.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:grouped_list/grouped_list.dart';
 
-class ProductView extends StatelessWidget {
+class ProductView extends StatefulWidget {
   const ProductView({Key? key});
 
+  @override
+  State<ProductView> createState() => _ProductViewState();
+}
+
+class _ProductViewState extends State<ProductView> {
   @override
   Widget build(BuildContext context) {
     var collection = FirebaseFirestore.instance.collection('products');
     return Container(
-      key: key,
       constraints: BoxConstraints.tightForFinite(height: MQuery.height! * 1.2),
       // color: Colors.white60,
       child: Stack(

@@ -1,5 +1,5 @@
-import 'package:crud2/util/custom_color.dart';
-import 'package:crud2/util/media_query.dart';
+import 'package:crud2/app/util/custom_color.dart';
+import 'package:crud2/app/util/media_query.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';

@@ -1,4 +1,4 @@
-import 'package:crud2/util/custom_color.dart';
+import 'package:crud2/app/util/custom_color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';

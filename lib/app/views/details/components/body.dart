@@ -1,10 +1,11 @@
-import 'package:crud2/util/custom_color.dart';
-import 'package:crud2/util/validators.dart';
+import 'package:crud2/app/util/validators.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+
+import '../../../util/custom_color.dart';
 
 //details
 class Body extends StatelessWidget {

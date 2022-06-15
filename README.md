@@ -21,16 +21,22 @@
 
 Use a [nossa comunidade](https://coodesh.com/desenvolvedores#community) para tirar dúvidas sobre o processo ou envie um e-mail para contato@coodesh.com.
 
-### Screenshots 
+### Screenshots v1
 
 <img src="assets/versao1.png" height="500em" /> 
-<img src="assets/versao2.png" height="500em" />
+
+### Screenshots v2
+<img src="assets/versao2a.png" height="500em" />
+<img src="assets/versao2b.png" height="500em" />
+<img src="assets/versao2c.png" height="500em" />
+<img src="assets/versao2d.png" height="500em" />
+<img src="assets/versao2e.png" height="500em" />
 
 <h2>Detalhes de Configuracao</h2>
   
   + Flutter channel: stable 
   + Flutter: versao 3.0.2
-  + Dart: versao 2.2.0
+  + Dart: versao 2.17.3
   + Design Pattern: MVVM
   + Dependencias Utilizadas:  
     - cloud_firestore

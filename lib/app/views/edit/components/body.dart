@@ -1,4 +1,4 @@
-import 'package:crud2/app/views/edit/components/custom_button.dart';
+import 'package:crud2/app/views/edit/components/custom_button_widget.dart';
 import 'package:crud2/app/util/custom_color.dart';
 import 'package:crud2/app/util/media_query.dart';
 import 'package:crud2/app/services/product_service.dart';
@@ -171,7 +171,7 @@ class _BodyState extends State<Body> {
           const SizedBox(height: 15),
           Divider(color: CustomColor.kBorderColor),
           const SizedBox(height: 30),
-          CustomButton(
+          CustomButtonWidget(
             title: 'Atualizar',
             onTap: () => _onUpdateProd(),
           ),

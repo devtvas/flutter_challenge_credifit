@@ -1,10 +1,10 @@
 import 'package:crud2/app/util/custom_color.dart';
 import 'package:flutter/material.dart';
 
-class CustomButton extends StatelessWidget {
+class CustomButtonWidget extends StatelessWidget {
   final String? title;
   final VoidCallback? onTap;
-  const CustomButton({
+  const CustomButtonWidget({
     Key? key,
     this.title,
     this.onTap,

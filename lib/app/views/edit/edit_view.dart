@@ -7,11 +7,16 @@ import 'package:flutter/src/widgets/framework.dart';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-class EditView extends StatelessWidget {
+class EditView extends StatefulWidget {
   final DocumentSnapshot? prod;
 
   const EditView({Key? key, required this.prod}) : super(key: key);
 
+  @override
+  State<EditView> createState() => _EditViewState();
+}
+
+class _EditViewState extends State<EditView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,8 +24,8 @@ class EditView extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              Header(item: prod),
-              Body(item: prod),
+              Header(item: widget.prod),
+              Body(item: widget.prod),
             ],
           ),
         ),

@@ -2,14 +2,14 @@
 
 ## Historia do projeto (branchs)
 
-- [MAIN](https://github.com/devtvas/flutter_challenge_credifit/tree/main) - voce esta aqui!
-- [CRED-02](https://github.com/devtvas/flutter_challenge_credifit/tree/CRED-02) - 12/06/22
+- [MAIN](https://github.com/devtvas/flutter_challenge_credifit/tree/main) - 11/06/22 - (voce esta aqui!)
+- [CRED-02](https://github.com/devtvas/flutter_challenge_credifit/tree/CRED-02) - 12/06/22 
 - [CRED-03](https://github.com/devtvas/flutter_challenge_credifit/tree/CRED-03) - 13/06/22
 - [CRED-04](https://github.com/devtvas/flutter_challenge_credifit/tree/CRED-04) - 15/06/22
 
 <h2>Como rodar o projeto</h2>
 
-  + [ Build_Flutter ]
+  + Commands
 
     ```
     $ git clone projeto

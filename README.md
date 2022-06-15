@@ -42,7 +42,8 @@ Use a [nossa comunidade](https://coodesh.com/desenvolvedores#community) para tir
 <h2>Como rodar o projeto</h2>
 
   + [Build_Mobile]
-```
+
+    ```
     $ clone o projeto
     $ cd nome-projeto
     $ flutter build run

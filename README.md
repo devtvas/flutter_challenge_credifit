@@ -1,5 +1,14 @@
 <h1>Resolucao do desafio técnico para o processo seletivo da empresa Credifit by (Coodesh).</h1>
+<h2>Como rodar o projeto</h2>
 
+  + [Build_Mobile]
+    
+    ```
+    $ clone o projeto
+    $ cd nome-projeto
+    $ flutter build run
+
+    ```
 <h2>Detalhe do desafio</h2>
 
 * Utilizar o seu github pessoal para publicar o desafio. Confirme que a visibilidade do projeto é pública (não esqueça de colocar no readme a referência a este challenge); 
@@ -39,15 +48,7 @@ Use a [nossa comunidade](https://coodesh.com/desenvolvedores#community) para tir
     - mask: 
     - app_popup_menu: 
 
-<h2>Como rodar o projeto</h2>
 
-  + [Build_Mobile]
-```
-    $ clone o projeto
-    $ cd nome-projeto
-    $ flutter build run
-
-    ```
 
 ## Candidato/Desenvolvedor
 

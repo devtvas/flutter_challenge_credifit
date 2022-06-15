@@ -1,5 +1,4 @@
-<h1>Resolucao do desafio técnico para o processo seletivo da empresa Credifit by (Coodesh).</h1>
-<h2>Como rodar o projeto</h2>
+<h1>CRED-03</h2>
 
   + [Build_Mobile]
     
@@ -9,16 +8,12 @@
     $ flutter build run
 
     ```
-<h2>Detalhe do desafio</h2>
+<h2>Atividades CRED03</h2>
 
-* Utilizar o seu github pessoal para publicar o desafio. Confirme que a visibilidade do projeto é pública (não esqueça de colocar no readme a referência a este challenge); 
-* Leia atentamente todo o descritivo desse documento antes de qualquer coisa; 
-* O projeto deverá ser desenvolvido em Flutter/Dart; 
-* Os produtos disponíveis no projeto da aplicação devem ser recuperados através do Firebase Realtime DB ou Firestore; 
-* Utilize sempre boas práticas nas implementações. OOP, SOLID, DDD, Clean Code, Injeção de Dependência são sempre bem-vindos e fazem toda diferença!!!
+* Refatoracao;
+* Aplicado principio SOLID (SRP)
 
 ###  Base de Dados
-
  
 * Utilizar o Firestore ou Firebase Realtime DB
 

@@ -1,4 +1,5 @@
 import 'package:crud2/app/services/product_service.dart';
+import 'package:crud2/app/services/product_service.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
@@ -70,7 +71,7 @@ class TemplateDialog extends State<StatefulWidget>
                       child: ElevatedButton(
                           onPressed: () async {
                             //
-                            await ProductService().removeProduct(id);
+                            // await FirestoreService().delete(id);
                             //
                             Navigator.of(context, rootNavigator: true)
                                 .pop('dialog');

@@ -1,3 +1,4 @@
+import 'package:crud2/app/models/product_firestore_model.dart';
 import 'package:crud2/app/util/custom_color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -5,7 +6,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 //details
 class Header extends StatelessWidget {
-  final DocumentSnapshot? item;
+  final ProductFirestoreModel? item;
   const Header({
     Key? key,
     this.item,

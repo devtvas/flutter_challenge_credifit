@@ -1,3 +1,4 @@
+import 'package:crud2/app/models/product_firestore_model.dart';
 import 'package:crud2/app/util/validators.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
@@ -9,7 +10,7 @@ import '../../../util/custom_color.dart';
 
 //details
 class Body extends StatelessWidget {
-  final DocumentSnapshot? item;
+  final ProductFirestoreModel? item;
   const Body({
     Key? key,
     this.item,
@@ -28,7 +29,7 @@ class Body extends StatelessWidget {
             children: [
               //update
               Text(
-                item!['title'],
+                '${item!.title}',
                 style: TextStyle(
                   fontSize: 15,
                   fontWeight: FontWeight.bold,
@@ -45,7 +46,7 @@ class Body extends StatelessWidget {
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Text(
-                  item!['type'],
+                  '${item!.type}',
                   style: TextStyle(
                     fontSize: 15,
                     fontWeight: FontWeight.bold,
@@ -57,7 +58,7 @@ class Body extends StatelessWidget {
           ),
           SizedBox(height: 10),
           Text(
-            item!['description'],
+            '${item!.description}',
             style: TextStyle(
               color: CustomColor.kSubtitleColor,
               fontSize: 13,
@@ -68,7 +69,7 @@ class Body extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               RatingBarIndicator(
-                rating: Validators.convertIntRatingDouble(item!['rating']),
+                rating: Validators.convertIntRatingDouble(item!.rating),
                 itemBuilder: (context, index) => const Icon(
                   Icons.star_rate_rounded,
                   color: Colors.indigo,
@@ -79,7 +80,7 @@ class Body extends StatelessWidget {
               ),
               //update
               Text(
-                'R\$ ${Validators.formatCasaDecimal(item!['price'])}',
+                'R\$ ${Validators.formatCasaDecimal(item!.price)}',
                 style: TextStyle(
                   fontSize: 15,
                   fontWeight: FontWeight.bold,

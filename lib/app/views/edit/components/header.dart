@@ -1,3 +1,4 @@
+import 'package:crud2/app/models/product_firestore_model.dart';
 import 'package:crud2/app/util/custom_color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -5,7 +6,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 //edit
 class Header extends StatelessWidget {
-  final DocumentSnapshot? item;
+  final ProductFirestoreModel? item;
   const Header({
     Key? key,
     this.item,
@@ -27,16 +28,33 @@ class Header extends StatelessWidget {
             builder: (_, constraints) {
               return Column(
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      InkWell(
-                        onTap: () => Navigator.of(context).pop(),
-                        child: Icon(Icons.chevron_left,
-                            color: CustomColor.kBlackColor, size: 30),
+                  Container(
+                    color: Colors.black,
+                    child: Padding(
+                      padding: const EdgeInsets.all(15),
+                      child: Row(
+                        children: [
+                          InkWell(
+                            onTap: () => Navigator.of(context).pop(),
+                            child: Icon(Icons.chevron_left,
+                                color: CustomColor.tTitleWhite, size: 30),
+                          ),
+                          // SvgPicture.asset('assets/icons/share.svg'),
+                          const Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 100),
+                            child: Center(
+                              child: Text(
+                                "Editar item",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 20,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
-                      // SvgPicture.asset('assets/icons/share.svg'),
-                    ],
+                    ),
                   ),
                   Hero(
                     tag: item.hashCode,

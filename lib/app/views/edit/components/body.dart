@@ -1,3 +1,5 @@
+import 'package:crud2/app/models/product_firestore_model.dart';
+import 'package:crud2/app/services/product_service.dart';
 import 'package:crud2/app/views/edit/components/custom_button_widget.dart';
 import 'package:crud2/app/util/custom_color.dart';
 import 'package:crud2/app/util/media_query.dart';
@@ -13,7 +15,7 @@ import 'package:mask/mask/mask.dart';
 
 //edit
 class Body extends StatefulWidget {
-  final DocumentSnapshot? item;
+  final ProductFirestoreModel? item;
   const Body({
     Key? key,
     this.item,
@@ -77,7 +79,7 @@ class _BodyState extends State<Body> {
                       decoration: InputDecoration(
                         filled: true,
                         fillColor: CustomColor.tEditProd.withOpacity(0.2),
-                        hintText: '${widget.item!['title']} *',
+                        hintText: '${widget.item!.title} *',
                         hintStyle: TextStyle(
                           color: CustomColor.tTitleWhite,
                         ),
@@ -103,7 +105,7 @@ class _BodyState extends State<Body> {
                       decoration: InputDecoration(
                         filled: true,
                         fillColor: CustomColor.tEditProd.withOpacity(0.2),
-                        hintText: '${widget.item!['type']} *',
+                        hintText: '${widget.item!.type} *',
                         hintStyle: TextStyle(
                           color: CustomColor.tTitleWhite,
                         ),
@@ -117,7 +119,7 @@ class _BodyState extends State<Body> {
           ),
           SizedBox(height: 10),
           Text(
-            widget.item!['description'],
+            '${widget.item!.description}',
             style: TextStyle(
               color: CustomColor.kSubtitleColor,
               fontSize: 13,
@@ -128,8 +130,7 @@ class _BodyState extends State<Body> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               RatingBarIndicator(
-                rating:
-                    Validators.convertIntRatingDouble(widget.item!['rating']),
+                rating: Validators.convertIntRatingDouble(widget.item!.rating),
                 itemBuilder: (context, index) => const Icon(
                   Icons.star_rate_rounded,
                   color: Colors.indigo,
@@ -156,7 +157,7 @@ class _BodyState extends State<Body> {
                           filled: true,
                           fillColor: CustomColor.tEditProd.withOpacity(0.2),
                           hintText:
-                              '${Validators.formatCasaDecimal(widget.item!['price'])} *',
+                              '${Validators.formatCasaDecimal(widget.item!.price)} *',
                           hintStyle: TextStyle(
                             color: CustomColor.tTitleWhite,
                           ),
@@ -209,12 +210,14 @@ class _BodyState extends State<Body> {
         typeCRTL!.text.isNotEmpty &&
         priceCRTL!.text.isNotEmpty) {
       _formKeyEdit.currentState!.save();
-      dynamic id = widget.item!.id;
+      // dynamic id = widget.item!.id;
       dynamic title = titleCTRL!.text;
       dynamic type = typeCRTL!.text;
       double price = _formatPrice();
+      String dataAtual = new DateTime.now().toIso8601String();
       //
-      await ProductService().updateProduct(id, title, type, price);
+      // await FirestoreService().put(id, title, type, price);
+      // await FirestoreService().set(id, title, type, price, dataAtual);
       Navigator.pop(context);
     }
     return clearInputText();
